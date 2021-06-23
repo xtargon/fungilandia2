@@ -1,0 +1,724 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FUNGILANDIA</title>
+	<meta name="title" content="jQuery Immersive Slider by Pete R. | The Pete Design" />
+	<meta name="description" content="Create an immersive slider experience with jQuery Immersive Slider" />
+		<link rel="image_src" href="/images/immersive_slider_image.png" />
+
+	<meta content="http://www.thepetedesign.com/demos/immersive_slider_demo.html" property="og:url" />
+	<meta content="http://www.thepetedesign.com/images/immersive_slider_image.png" property="og:image" />
+	<link rel="icon" type="image/png" sizes="32x32" href="img/logofb 2.png">
+	<meta name="author" content="Pete R.">
+	<link rel="canonical" href="http://www.thepetedesign.com/demos/immersive_slider_demo.html" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<script
+	  src="https://code.jquery.com/jquery-3.6.0.js"
+	  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="jquery.immersive-slider.js"></script>
+  <link href='immersive-slider.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="estilos.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: #f3f3f3;
+      padding: 0;
+      text-align: center;
+      font-family: 'open sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+    }
+
+    .wrapper {
+    	height: auto !important;
+    	height: 100%;
+    	margin: 0 auto;
+    	overflow: hidden;
+
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    h1, h2 {
+      width: 100%;
+      float: left;
+    }
+    h1 {
+      margin-top: 25px;
+      color: #000;
+      margin-bottom: 5px;
+      font-size: 50px;
+      letter-spacing: -4px;
+    }
+    h2 {
+      color: #444;
+      font-weight: 100;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .pointer {
+      color: #9b59b6;
+      font-family: 'Pacifico', cursive;
+      font-size: 30px;
+      margin-top: 15px;
+    }
+    pre {
+      margin: 80px auto;
+    }
+    pre code {
+      padding: 35px;
+      border-radius: 5px;
+      font-size: 15px;
+      background: rgba(0,0,0,0.1);
+      border: rgba(0,0,0,0.05) 5px solid;
+      max-width: 500px;
+    }
+
+
+    .main {
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+      background: #161923;
+    }
+
+    .main h1 {
+      padding:20px 50px;
+      float: left;
+      width: 100%;
+      font-size: 90px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      font-weight: 100;
+      color: black;
+      margin: 0;
+      margin-top: 70px;
+      font-family: 'Playfair Display';
+      letter-spacing: -1px;
+    }
+
+    .main h1.demo1 {
+      background: #1ABC9C;
+    }
+
+    .reload.bell {
+      font-size: 12px;
+      padding: 20px;
+      width: 45px;
+      text-align: center;
+      height: 47px;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+    }
+
+    .reload.bell #notification {
+      font-size: 25px;
+      line-height: 140%;
+    }
+
+    .reload, .btn{
+      display: inline-block;
+      border: 4px solid #A2261E;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      background: #CC3126;
+      display: inline-block;
+      line-height: 100%;
+      padding: 0.7em;
+      text-decoration: none;
+      color: #fff;
+      width: 100px;
+      line-height: 140%;
+      font-size: 17px;
+      font-family: open sans;
+      font-weight: bold;
+    }
+    .reload:hover{
+      background: #A2261E;
+    }
+    .btn {
+      width: 200px;
+      color: #fff;
+      border: none;
+      margin-left: 10px;
+      background: black;
+    }
+    .clear {
+      width: auto;
+    }
+    .btn:hover, .btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    .btns {
+      width: 410px;
+      margin: 50px auto;
+    }
+    .credit {
+      text-align: center;
+      color: #444;
+      padding: 10px;
+      margin: 0 0 0 0;
+      background: #161923;
+      color: #FFF;
+      float: left;
+      width: 100%;
+    }
+    .credit a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: block;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.25);
+      font-weight: bold;
+      font-size: 13px;
+      color: #000;
+      -webkit-transition: all 200ms ease-out;
+      -moz-transition: all 200ms ease-out;
+      -o-transition: all 200ms ease-out;
+      transition: all 200ms ease-out;
+    }
+    .back:hover {
+      color: black;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+
+    .page_container {
+      max-width: 960px;
+      margin: 50px auto;
+    }
+
+    .header {
+      background: white;
+      padding-top: 10px;
+      margin-bottom: 0;
+    }
+    .header h1{
+      margin-bottom: 0;
+      font-size: 45px;
+    }
+
+    .header .menu {
+      padding-bottom: 10px;
+    }
+
+    .benefits {
+      color: black;
+      height: 100px;
+      background: #FFF;
+      position: relative;
+      width: 100%;
+      padding: 25px;
+      font-size: 40px;
+      font-weight: 100;
+      float: left;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+
+    .benefits .page_container{
+      margin-bottom: 50px;
+      margin-top: 0;
+    }
+
+    .immersive_slider .is-slide .content h2{
+      line-height: 140%;
+      font-weight: 100;
+      color: white;
+      font-weight: 100;
+    }
+    .immersive_slider .is-slide .content a {
+      color: white;
+    }
+
+  .immersive_slider .is-slide .content p{
+    float: left;
+    font-weight: 100;
+    width: 100%;
+    font-size: 17px;
+    margin-top: 5px;
+  }body .one .bsa_it_ad { background: transparent; border: none; font-family: inherit; padding: 0 15px 0 10px; margin: 0; text-align: center; }
+body .one .bsa_it_ad:hover img { -moz-box-shadow: 0 0 3px #000; -webkit-box-shadow: 0 0 3px #000; box-shadow: 0 0 3px #000; }
+body .one .bsa_it_ad .bsa_it_i { display: block; padding: 0; float: none; margin: 0 0 5px; }
+body .one .bsa_it_ad .bsa_it_i img { padding: 0; border: none; }
+body .one .bsa_it_ad .bsa_it_t { padding: 6px 0; }
+body .one .bsa_it_ad .bsa_it_d { padding: 0; font-size: 12px; color: #333; }
+body .one .bsa_it_p { display: none; }
+body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; margin: 12px 15px 0; text-align: center; }
+
+.ads {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  z-index: 99;
+  text-align: center;
+  max-width: 200px;
+}
+
+.ads a {
+  color: black;
+}
+
+.ad-header {
+  margin: 0 0 -2px 0px;
+  background: white;
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.ad-header a {
+  float: right;
+  border-left: 1px solid #f3f3f3;
+  padding:10px;
+  line-height: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+}
+.ad-header a:hover {
+  background: #eee;
+}
+
+.ads .promo {
+  position: absolute;
+  top: -195px;
+  left: 0;
+}
+
+.message {
+  max-width: 550px;
+  margin: 50px auto 0;
+  padding: 14px;
+  background: #72EC80;
+  color: #0E530E;
+  font-weight: normal;
+  font-style: normal;
+  border-radius: 3px;
+}
+
+.success-message a{
+  color: black;
+  border-bottom: 1px dotted #000;
+}
+
+.success-message {
+  background: #72EC80;
+  color: #0E530E;
+}
+
+.error-message a{
+  color: #FFF;
+  border-bottom: 1px dotted #fff;
+}
+
+.error-message {
+  background: #EC7272;
+  color: #FFF;
+}
+
+.socials {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  float: left;
+  padding: 9px 5px 5px;
+  margin: 0 0 60px 0;
+}
+.socials > * {
+  display: inline !important;
+}
+.socials .fb-like {
+  top: -5px;
+  min-width: 85px;
+  text-align: left;
+}
+.socials .fb-like > span {
+  vertical-align: top;
+}
+.socials .twitter-share-button {
+  width: 85px  !important;
+}
+
+#carbonads {
+  --width: 180px;
+  --font-size: 14px;
+}
+
+#carbonads {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px;
+  max-width: var(--width);
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: var(--font-size);
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: var(--width);
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: var(--width) !important;
+  width: var(--width);
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 10px var(--font-size);
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 0;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 759px) {
+  #carbonads {
+    float: none;
+    margin: 0 auto;
+    max-width: 330px;
+  }
+  #carbonads span {
+    position: relative;
+  }
+  #carbonads > span {
+    max-width: none;
+  }
+  .carbon-img {
+    float: left;
+    margin: 0;
+  }
+
+  .carbon-img img {
+    max-width: 130px !important;
+  }
+  .carbon-text {
+    float: left;
+    margin-bottom: 0;
+    padding: 8px 20px;
+    text-align: left;
+    max-width: calc(100% - 130px - 3em);
+  }
+  .carbon-poweredby {
+    left: 130px;
+    bottom: 0;
+    display: block;
+    width: 100%;
+  }}}
+
+
+	</style>
+</head>
+<body id="body">
+  <div class="wrapper">
+
+    <header>
+			<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+			<script type="text/javascript">
+				function lower() {
+					window.scroll({
+					  top: 1500,
+					  behavior: 'smooth'
+					});
+				}
+			</script>
+			<nav class="navbar navbar-dark bg-dark" style="color:white !important;">
+				<img class="logo_fungi" src="img/logofb.png" alt="Slider 1">
+				<div class='nav_right'>
+					<div id="drop">
+						<li class="parent"><a class="a_menu" href="#"><i class="fas fa-stream"></i></a>
+			         <ul>
+								 <h5 class="first_about" onclick="lower()">
+			 						<i class="fas fa-users"></i>
+			 						Sobre nosotros
+			 					</h5>
+
+			 					<h5 class="first_about">
+			 						<i class="fas fa-journal-whills"></i>
+			 						Nuestros productos
+			 					</h5>
+
+								<h5 class="first_about">3
+			 						<i class="fas fa-store-alt"></i>
+			 						Tienda Online
+			 					</h5>
+
+			         </ul>
+			      </li>
+					</div>
+			</nav>
+
+    </header>
+		<div class="banner">
+			<img class="banner_img" src="img/1web.jpg" alt="Slider 1">
+			<div class="opaque">
+				<div class="opaque_one">
+					<div class="some_card">
+						<img class="sticker1" src='img/sticker17.png'>
+						<br>
+						<h5 class="card_title_banner"><strong>Quieres aprender a cultivar el cambio?</strong></h5>
+						<hr>
+						<p>Con nosotros aprenderaz como el cultivar una espora puede ser el comienzo de un sueño innovador <br>
+							 Nuestros cursos estan presentados por expertos de todo el mundo reunidos para enseñarte a ser parte de un buen futuro
+							 y <strong>así emprenderas tu propio negocio!</strong>
+						</p>
+					</div>
+					<br>
+					<div class="content_btns">
+						<button type="button" class="contact_btn_1 btn btn-outline-light"><i class="fas fa-comments"></i> - Contactar</button>
+						<button type="button" class="contact_btn_2 btn btn-outline-success"><i class="fas fa-users-class"></i> - Clases profecionales</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="inf_general">
+			<h3 class="ident_store"><i class="fal fa-info-circle"></i> | Informacion general</h3>
+
+			<div class="card_inf">
+				<h5><i class="inf_icon_card fad fa-map-marked-alt"></i><br> Localizacion del centro </h5>
+			</div>
+			<div class="color_blue card_inf">
+				<h5><i class="inf_icon_card fad fa-envelope-open-text"></i><br>FUNGILANDALA@GMAIL.COM </h5>
+			</div>
+			<div class="color_red card_inf">
+				<h5><i class="inf_icon_card fas fa-phone-alt"></i><br> +51 999 999 999 </h5>
+			</div>
+		</div>
+
+    <div class="main">
+      <div class="page_container">
+        <div id="immersive_slider">
+          <div class="slide" data-blurred="img/slide1_blurred.jpg">
+
+            <div class="image">
+              <img id="btn-abrir-popup1" src="img/5web.jpg" alt="Slider 1">
+            </div>
+          </div>
+          <div class="slide" data-blurred="img/5web.jpg">
+
+            <div class="image">
+             <img id="btn-abrir-popup2" src="img/4web.jpg" alt="Slider 1">
+            </div>
+          </div>
+          <div class="slide" data-blurred="img/slide3_blurred.jpg">
+
+            <div class="image">
+              <img id="btn-abrir-popup3" src="img/6web.jpg" alt="Slider 1">
+            </div>
+          </div>
+        </div>
+      </div>
+  	</div>
+		<br>
+		<div class="content_card">
+			<h3 class="ident_store"><i class="fas fa-star"></i> | Productos destacados</h3>
+			<div class="card_item_home">
+					<p class="price_card"><i class="far fa-coin"></i> 3.000</p>
+					<img src="img/hongo1.jpg" class="img_store_card">
+					<h5 class="name_store_card">Mycena</h5>
+					<hr>
+					<p class="text_store_card">Mycena es un gran género de pequeños hongos saprotrofos, de la familia de Mycenaceae,
+						 rara vez tienen más de unos pocos centímetros de ancho</p>
+					<hr>
+					<div class="opt_store_card">
+						<h5 class="opt_card"><i class="fas fa-money-bill-wave"></i> COMPRAR</h5>
+						<h5 class="opt_card"><i class="fas fa-cart-plus"></i> Añadir al carrito</h5>
+					</div>
+
+			</div>
+
+			<div class="card_item_home">
+					<p class="price_card"><i class="far fa-coin"></i> 2.000</p>
+					<img src="img/hongo2.jpg" class="img_store_card">
+					<h5 class="name_store_card">Champiñones</h5>
+					<hr>
+					<p class="text_store_card">El champiñón común —cuyo nombre científico
+						 es Agaricus bisporus—​ es una especie de hongo basidiomiceto de la familia Agaricales nativo de Europa y América del norte</p>
+					<hr>
+					<div class="opt_store_card">
+						<h5 class="opt_card"><i class="fas fa-money-bill-wave"></i> COMPRAR</h5>
+						<h5 class="opt_card"><i class="fas fa-cart-plus"></i> Añadir al carrito</h5>
+					</div>
+			</div>
+
+
+			<div class="card_item_home">
+					<p class="price_card"><i class="far fa-coin"></i> 1.000</p>
+					<img src="img/hongo3.jpeg" class="img_store_card">
+					<h5 class="name_store_card">Hongo globo</h5>
+					<hr>
+					<p class="text_store_card">Existe una amplia variedad de los hongos con forma de globo. Se caracterizan porque
+						 contienen las esporas en su interior y para liberarlas y lograr la reproducción se abren o crean un orificio.</p>
+					<hr>
+					<div class="opt_store_card">
+						<h5 class="opt_card"><i class="fas fa-money-bill-wave"></i> COMPRAR</h5>
+						<h5 class="opt_card"><i class="fas fa-cart-plus"></i> Añadir al carrito</h5>
+					</div>
+			</div>
+
+
+		</div>
+
+		<div class="" style="background:moccasin;">
+			<div class="text_inf-video">
+				<img class="img-video" src="video/sticker 04.png" alt="">
+				<h5 class="text_inf">Clases con profecionales!</h5>
+				<hr>
+				<strong>FUNGILANDIA</strong> es un sueño para compartir, con cursos realizados por expertos sobre el cultivo
+				 de Hongos donde aseguramos que tu tambien seras capaz de cambiar el rumbo del mundo
+			</div>
+			<video class="video_principal" height="380px;" controls>
+				<source src="video/video completo para Website 1080.mp4" type="video/mp4">
+			</video>
+				<button type="button" class="button_redirect_class btn"><i class="fas fa-users-class"></i></button>
+		</div>
+
+
+  	<div class="benefits">
+      <div class="page_container">
+				<div class="overlay" id="overlay">
+					<div class="popup" id="popup">
+						<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+						<h3>SUSCRIBETE</h3>
+
+					</div>
+				</div>
+			</div>
+  	  </div>
+
+
+  	</div>
+  	<script type="text/javascript">
+  	  $(document).ready( function() {
+  	    $("#immersive_slider").immersive_slider({
+  	      container: ".main"
+  	    });
+  	  });
+
+    </script>
+  </div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-11278966-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-11278966-3');
+</script>
+<script src="popup.js"></script>
+
+<div class="img_only">
+	<img class="only_img" src="img/3web.jpg" alt="">
+</div>
+
+<div class="banner_low">
+	<div class="card_lower_banner">
+		<img class="img_card_lower_banner" src="img/sticker07.png" alt="">
+		<hr>
+		<h4> </h4>
+		<button class="button_banner" type="button" name="button">ESTE ES EL BOTON</button>
+	</div>
+</div>
+
+<div class="about">
+	<h5><i class="far fa-address-card"></i> Nosotros somos</h5>
+</div>
+<div class="card-group">
+  <div class="card">
+    <img src="img/ivanel.png" class="card-img-top card_img_people" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Ivanel | Lamas</h5>
+			<hr>
+      <p class="card-text">Fungicultor, Chef, Productor audiovisual, Instructor</p>
+      <p class="op1"><i class="fas fa-mobile"></i> Telefono Aqui !</p>
+			<p class="op1"><i class="far fa-envelope"></i> Correo aqui !</p>
+			<p class="op1"><i class="fab fa-instagram"></i> redSocial Aqui !</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="img/raisa.png" class="card-img-top card_img_people" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Raisa | Árias</h5>
+			<hr>
+      <p class="card-text">Área Comercial (,) Marketing y Publicidad</p>
+			<p class="op1"><i class="fas fa-mobile"></i> Telefono Aqui !</p>
+			<p class="op1"><i class="far fa-envelope"></i> Correo aqui !</p>
+			<p class="op1"><i class="fab fa-instagram"></i> redSocial Aqui !</p>    </div>
+  </div>
+  <div class="card">
+    <img src="img/paolo.png" class="card-img-top card_img_people" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Paolo | Rodriguez</h5>
+			<hr>
+      <p class="card-text">Fungicultor, cocinero, arte, diseño y fotografia </p>
+			<p class="op1"><i class="fas fa-mobile"></i> Telefono Aqui !</p>
+			<p class="op1"><i class="far fa-envelope"></i> Correo aqui !</p>
+			<p class="op1"><i class="fab fa-instagram"></i> redSocial Aqui !</p>    </div>
+  </div>
+</div>
+</body>
+</html>
