@@ -476,11 +476,25 @@ body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; ma
     <header>
 			<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 			<script type="text/javascript">
-				function lower() {
-					window.scroll({
-					  top: 1500,
-					  behavior: 'smooth'
-					});
+				function lower(p) {
+					if (p == 'mejores') {
+						 $('html, body').animate({
+						 scrollTop: $("#p_d").offset().top
+					 }, 100);
+					}
+
+					if (p == 'tienda') {
+						$('html, body').animate({
+						scrollTop: $("#t_o").offset().top
+					}, 100);
+					}
+
+					if (p == 'nosotros') {
+						$('html, body').animate({
+						scrollTop: $("#s_n").offset().top
+					}, 100);
+					}
+
 				}
 			</script>
 			<nav class="navbar navbar-dark bg-dark" style="color:white !important;">
@@ -489,20 +503,22 @@ body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; ma
 					<div id="drop">
 						<li class="parent"><a class="a_menu" href="#"><i class="fas fa-stream"></i></a>
 			         <ul>
-								 <h5 class="first_about" onclick="lower()">
-			 						<i class="fas fa-users"></i>
-			 						Sobre nosotros
-			 					</h5>
 
-			 					<h5 class="first_about">
+
+			 					<h5 class="first_about" onclick="lower('mejores')">
 			 						<i class="fas fa-journal-whills"></i>
-			 						Nuestros productos
+			 						Productos destacados
 			 					</h5>
 
-								<h5 class="first_about">3
+								<h5 class="first_about" onclick="lower('tienda')">
 			 						<i class="fas fa-store-alt"></i>
 			 						Tienda Online
 			 					</h5>
+
+								<h5 class="first_about" onclick="lower('nosotros')">
+								 <i class="fas fa-users"></i>
+								 Sobre nosotros
+							 </h5>
 
 			         </ul>
 			      </li>
@@ -574,7 +590,7 @@ body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; ma
   	</div>
 		<br>
 		<div class="content_card">
-			<h3 class="ident_store"><i class="fas fa-star"></i> | Productos destacados</h3>
+			<h3 class="ident_store" id='p_d'><i class="fas fa-star"></i> | Productos destacados</h3>
 			<div class="card_item_home">
 					<p class="price_card"><i class="far fa-coin"></i> 3.000</p>
 					<img src="img/hongo1.jpg" class="img_store_card">
@@ -589,8 +605,7 @@ body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; ma
 					</div>
 
 			</div>
-
-			<div class="card_item_home">
+			<div class="card_item_home" >
 					<p class="price_card"><i class="far fa-coin"></i> 2.000</p>
 					<img src="img/hongo2.jpg" class="img_store_card">
 					<h5 class="name_store_card">Champiñones</h5>
@@ -672,17 +687,19 @@ body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; ma
 
 <div class="banner_low">
 	<div class="card_lower_banner">
-		<img class="img_card_lower_banner" src="img/sticker07.png" alt="">
+		<h4>
+			<img id='t_o' class="img_card_lower_banner" src="img/sticker07.png" alt="">
+			<strong>FUNGILANDIA</strong> esta aqui para ayudarte a crecer!<br>por eso te ofrecemos los mejores productos de agronomia al mejor precio para ti.
+		</h4>
 		<hr>
-		<h4> </h4>
-		<button class="button_banner" type="button" name="button">ESTE ES EL BOTON</button>
+		<button class="button_banner" type="button" name="button"><i class="button_store fad fa-bags-shopping"></i>ECHAR UN VISTAZO</button>
 	</div>
 </div>
 
 <div class="about">
 	<h5><i class="far fa-address-card"></i> Nosotros somos</h5>
 </div>
-<div class="card-group">
+<div class="card-group" id='s_n'>
   <div class="card">
     <img src="img/ivanel.png" class="card-img-top card_img_people" alt="...">
     <div class="card-body">
@@ -715,5 +732,20 @@ body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; ma
 			<p class="op1"><i class="fab fa-instagram"></i> redSocial Aqui !</p>    </div>
   </div>
 </div>
+
+<footer>
+	<div class="footer_part_one">
+		<i class="fas fa-sitemap"></i>
+		Fungilandia®
+	</div>
+	<div class="footer_part_two">
+		<i class="fas fa-users"></i>
+		Staff: Ivanel Lamas - Raisa Árias - Paolo Rodriguez
+	</div>
+	<div class="footer_part_tree">
+		<i class="fas fa-laptop-code"></i>
+		diseñador y desarrollador web: Gabriel Carruyo
+	</div>
+</footer>
 </body>
 </html>

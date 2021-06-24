@@ -693,7 +693,7 @@ Class Definitions
   width: 59%;
   margin-top: 5%;
   margin-left: 3%;
-  background: rgba(0,0,0,.55);
+  background: rgba(0,0,0,.68);
   padding: 10px;
   border-radius: 3px;
   color: white;
@@ -727,4 +727,43 @@ Class Definitions
 
 .card_title_banner{
   text-align: center;
+}
+
+.button_store{
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+footer{
+  padding: 15px;
+  background-color: #212529!important;
+  margin-top: 40px;
+}
+
+.footer_part_one{
+  width: 20%;
+  text-align: left;
+  margin-left: -5%;
+  font-size: 20px;
+  color:#b3b3b3;
+  display: inline-block;
+}
+
+.footer_part_two{
+  width: 20%;
+  text-align: left;
+  font-size: 15px;
+  margin-left: 15%;
+  color:#b3b3b3;
+  display: inline-block;
+}
+
+.footer_part_tree{
+  width: 20%;
+  text-align: left;
+  font-size: 14px;
+  margin-left: 15%;
+  color:#b3b3b3;
+  display: inline-block;
 }
